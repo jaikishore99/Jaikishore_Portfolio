@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://kit.fontawesome.com/6e98a95076.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style type="text/css">
+        * {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    /* background: #080808;
+    color: #fff; */
+    background: #fff;
+    color: #080808;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+#header {
+    width: 100%;
+    height: fit-content;
+    background: white;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.container {
+    padding: 10px 10%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+nav h3 {
+    color: rgb(0, 68, 255);
+    cursor: pointer;
+}
+
+nav h3:hover {
+    color: #4800ff;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: #080808;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: rgb(0, 68, 255);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+#coverContainer {
+    background-image: url("https://github.com/jaikishore99/Jaikishore_Portfolio/blob/main/CP.jpeg?raw=true");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.coverText {
+    margin-top: 20%;
+    font-size: 30px;
+}
+
+.coverText h1 {
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.coverText h1 span {
+    color: rgb(0, 68, 255);
+}
+
+/*-------------------------------*/
+#About {
+    padding: 80px 0;
+    color: #ababaa;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.aboutColOne {
+    flex-basis: 35%;
+}
+
+.aboutColOne img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 0px rgba(176, 176, 176, 0.9);
+}
+
+.aboutColTwo {
+    flex-basis: 60%;
+}
+
+.AboutText {
+    font-size: 60px;
+    font-weight: 600;
+    color: black;
+}
+
+.AboutLinkbuttone {
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.AboutLinks {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.AboutLinks::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: rgb(0, 68, 255);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.AboutLinks.active::after {
+    width: 100%;
+}
+
+.AboutContent ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.AboutContent ul li span {
+    color: rgb(0, 68, 255);
+    font-size: 14px;
+}
+
+.AboutContent {
+    display: none;
+}
+
+.AboutContent.activeTab {
+    display: block;
+}
+
+/* closed about */
+
+#Services {
+    padding: 30px 0;
+}
+
+.ServiceList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.ServiceList div {
+    background: #fff;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 20px;
+    transition: background 0.5s, transform 0.5s;
+    box-shadow: 0 0 10px 0px rgba(176, 176, 176, 0.9);
+}
+
+.ServiceList div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.ServiceList div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.ServiceList div a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.ServiceList div:hover {
+    background: rgb(0, 68, 255);
+    transform: translateY(-10px);
+}
+.ServiceList div:hover a{
+    color: #fff;
+}
+
+/* closed my services */
+
+#Portfolio {
+    padding: 50px 0;
+    margin-top: 10%;
+}
+
+.WorkList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.work {
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px 0px rgba(176, 176, 176, 0.9);
+}
+
+.work img {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.Layer {
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(rgba(0, 0, 0, 0.677), rgba(0, 68, 255, 0.726));
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+
+.Layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.Layer p {
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.Layer a {
+    margin-top: 20px;
+    color: rgb(0, 68, 255);
+    text-decoration: 18px;
+    font-size: 18px;
+    line-height: 60px;
+    background: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.work:hover img {
+    transform: scale(1.1);
+}
+
+.work:hover .Layer {
+    height: 100%;
+}
+
+.seeMore {
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid rgb(0, 68, 255);
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: rgb(0, 68, 255);
+    transition: transform 0.5s;
+}
+
+.seeMore:hover {
+    background: rgb(0, 68, 255);
+    color: #fff;
+}
+
+/* closed my work */
+#Contact{
+    margin-top: 7%;
+}
+.contactLeft {
+    flex-basis: 35%;
+}
+
+.contactRight {
+    flex-basis: 60%;
+}
+
+.contactLeft p {
+    margin-top: 30px;
+}
+
+.contactLeft p i {
+    color: rgb(0, 68, 255);
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.SocialIcons {
+    margin-top: 30px;
+}
+
+.SocialIcons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababaa;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.SocialIcons .fa-instagram:hover{
+    color: rgb(255, 0, 0);
+    transform: translateY(-5px);
+} 
+
+.SocialIcons .fa-twitter-square:hover{
+    color: rgb(25, 25, 25);
+    transform: translateY(-5px);
+} 
+
+.SocialIcons .fa-github:hover{
+    color: rgb(25, 25, 25);
+    transform: translateY(-5px);
+}
+.SocialIcons a:hover {
+    color: rgb(0, 68, 255);
+    transform: translateY(-5px);
+}
+
+.contactRight form {
+    width: 100%;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: white;
+    padding: 10px;
+    /* margin: 5px 0; */
+    color: rgb(28, 27, 27);
+    font-size: 18px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+}
+
+.inputBox {
+    position: relative;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 0.600rem 5px;
+    font-size: 16px;
+    letter-spacing: 0.062rem;
+    margin-bottom: 1.700rem;
+    border: 1px solid #ccc;
+    background: transparent;
+    border-radius: 4px;
+    line-height: 1.5;
+}
+
+.inputBox label {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    padding: 0.700rem 0;
+    font-size: 1rem;
+    color: grey;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.inputBox input:focus~label,
+.inputBox input:valid~label,
+.inputBox input:not([value=""])~label {
+    top: -1.125rem;
+    left: 10px;
+    color: #1a73e8;
+    font-size: 0.75rem;
+    background-color: white;
+    height: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.inputBox input:focus {
+    outline: none;
+    border: 2px solid #1a73e8;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+    color: #fff;
+}
+
+/*closed website*/
+/*open small screen*/
+nav .fas {
+    display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+    .headertext {
+        margin-top: 100%;
+        font-size: 16px;
+    }
+
+    .headertext h1 {
+        font-size: 30px;
+    }
+
+    .coverText h1{
+        font-size: 25px;
+        margin-top: 26%;
+    }
+    .coverText p{
+        font-size: 12px;
+        margin-top: 8%;
+    }
+
+    #coverContainer {
+        background-image: url("https://github.com/jaikishore99/Jaikishore_Portfolio/blob/main/CP.jpeg?raw=true");
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 29vh;
+    }
+
+    nav .fas {
+        display: block;
+        font-size: 25px;
+    }
+
+    nav ul {
+        background: rgb(35, 107, 216);
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+
+    nav ul .fas {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+
+    nav ul a:hover{
+        color: #fff;
+    }
+
+    .AboutText {
+        font-size: 40px;
+    }
+
+    .aboutColOne,
+    .aboutColTwo {
+        flex-basis: 100%;
+    }
+
+    .aboutColOne {
+        margin-bottom: 30px;
+    }
+
+    .aboutColTwo {
+        font-size: 14px;
+    }
+
+    .AboutLinks {
+        font-size: 16px;
+        margin-right: 20px;
+    }
+
+    .contactLeft,
+    .contactRight {
+        flex-basis: 100%;
+    }
+
+    .copyright {
+        font-size: 14px;
+    }
+    .contactRight{
+        margin-top: 20px;
+    }
+    .seeMore{
+        background: #fff;
+    }
+    .seeMore:hover {
+        background: rgb(0, 68, 255);
+        color: #fff;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h3>JAI KISHORE.</h3>
+                <ul id="sidemenu">
+                    <li><a href="#coverContainer"><i class="fa fa-home" onclick="toggleFunction()"></i>&nbsp;Home</a>
+                    </li>
+                    <li><a href="#About"><i class="fa fa-user-circle" onclick="toggleFunction()"></i>&nbsp;About</a>
+                    </li>
+                    <li><a href="#Services"><i class="fa fa-file"></i></i>&nbsp;MyWork</a></li>
+                    <li><a href="#Portfolio"><i class="fa fa-certificate"></i>&nbsp;Certifications</a></li>
+                    <li><a href="#Contact"><i class="fa fa-phone-square"></i>&nbsp;Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmunu()"></i>
+            </nav>
+        </div>
+    </div>
+    <div id="coverContainer">
+        <div class="container">
+            <div class="coverText">
+                <h1>Hello<br> I`m <span>Jai kishore</span></h1>
+                <p>Software Development Engineer In Test SDET</p>
+            </div>
+        </div>
+    </div>
+    <!-- Closed Header and name container-->
+    <div id="About">
+        <div class="container">
+            <div class="row">
+                <div class="aboutColOne">
+                    <img src="https://github.com/jaikishore99/Jaikishore_Portfolio/blob/main/1000008014.jpg?raw=true">
+                </div>
+                <div class="aboutColTwo">
+                    <h1 class="AboutText">About Me</h1>
+                    <p>As a skilled Software Tester with 3 years of
+                        diversified experience, I am eager to expand my
+                        expertise in software testing by leveraging my
+                        proficiency in writing and building automated
+                        test cases using Selenium WebDriver.</p>
+                    <div class="AboutLinkbuttone">
+                        <p class="AboutLinks active" onclick="opentab('Skills')">Skills</p>
+                        <p class="AboutLinks" onclick="opentab('Experience')">Experience</p>
+                        <p class="AboutLinks" onclick="opentab('Education')">Education</p>
+                    </div>
+                    <div class="AboutContent activeTab" id="Skills">
+                        <ul>
+                            <li><span>Programming</span><br>Core Java</li>
+                            <li><span>Automation</span><br>Selenium, Cucumber, Maven, BDD Framework, Jira, Desktop and
+                                mainframe testing</li>
+                            <li><span>Scripting Languages</span><br>HTML, CSS and JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="AboutContent" id="Experience">
+                        <ul>
+                            <li><span>MemberTechnical at Broadridge ( June 2021 - Present Working)</span><br>
+                                1) Taken initiation to develop BDD Framework using
+                                Selenium WebDriver to provide end-to-end solutions to
+                                automate Browser, Desktop and Mainframe applications.<br>
+                                2) Worked as a team member for developing new STAMP
+                                Framework for team.<br>
+                                3) Worked closely with functional teams to understand their
+                                automation requirements and automated according to
+                                their requirements.<br>
+                                4) Delivered test results on time to functional team and
+                                taking sign-off from respective point of contact Provided
+                                Automation solutions for ACATS, PI-Works, CTFS, BPS and
+                                RBC products.<br>
+                                5) Worked closely with team and taken responsibility in
+                                providing Timelines for Automation Completion
+                                Handled issues in existing automation scripts and
+                                provided Support to team for any Automation Solution's.<br>
+                                6)Worked closely with team in resolving Automation issues
+                                Participated in Framework demos to demonstrate
+                                workflow of developed Framework.<br>
+                                7)Responsible for handling execution issues for all cycle
+                                executions.<br>
+                                8) written many reusables for handling actions all over the
+                                application Managed ACATS, PI-WORKS, CTFS, BPS and
+                                RBC Client product's <br>
+                                9) Utilized Ul automation techniques with locators such as
+                                XPath and for automating desktop applications with
+                                Inspector tool
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="AboutContent" id="Education">
+                        <ul>
+                            <li><span>B.Tech</span><br>St Mary`s Group Of Institutions, Hyderabad <br> CGPA - 6.7%</li>
+                            <li><span>12th</span><br>Sri Chaitana Junior College <br> CGPA - 7.7%</li>
+                            <li><span>10th</span><br>Brilliant Grammar High School <br> CGPA - 8.2%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- close about-->
+
+    <div id="Services">
+        <div class="container">
+            <h1 class="AboutText">My Work</h1>
+            <div class="ServiceList">
+                <div>
+                    <i class="fab fa-github"></i>
+                    <h2>GitHub</h2>
+                    <p>Find my Github profile </p>
+                    <a href="https://github.com/jaikishore99" target="_blank"><i
+                            class="fas fa-external-link-alt"></i></a>
+
+                </div>
+                <div>
+                    <i class="fab fa-linkedin"></i>
+                    <h2>Linkedin</h2>
+                    <p>Find my Linkedin profile</p>
+                    <a href="https://www.linkedin.com/in/boyani-jaikishore-4a4b681ba/" target="_blank"><i
+                            class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div>
+                    <i class="fa fa-file"></i>
+                    <h2>Resume</h2>
+                    <p>Download my resume</p>
+                    <a href="P:\\my mobile r8\\Download\\JaiKishore_CV.pdf" download target="_blank"><i class="fas fa-download"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    closed my services   -->
+
+    <div id="Portfolio">
+        <div class="container">
+            <h1 class="AboutText">My Certifications</h1>
+            <div class="WorkList">
+                <div class="work">
+                    <img src="https://p92.com/binaries/content/gallery/p92website/technologies/java-overview.png">
+                    <div class="Layer">
+                        <h3>Core JAVA</h3>
+                        <p>I have Completed Core JAVA certification</p>
+                        <p>Click here to view my certificate</p>
+                        <i class='far fa-hand-point-down' style="color: white;font-size: 24px;"></i>
+                        <a href="https://drive.google.com/file/d/1t4BIfkx4V8p3gk8rYzlmGaUJVdLEcSVQ/view"
+                            target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="https://miro.medium.com/v2/resize:fit:600/1*9XlH-tgCcTw9hy3d0YfBqA.png">
+                    <div class="Layer">
+                        <h3>Selenium</h3>
+                        <p>I have Completed Selenium Certification</p>
+                        <p>Click here to view my certificate</p>
+                        <i class='far fa-hand-point-down' style="color: white;font-size: 24px;"></i>
+                        <a href="https://drive.google.com/file/d/1IE6VL5IL4lhmqXV3kMHcM3CTxp5VlusU/view"
+                            target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img
+                        src="https://png.pngtree.com/png-vector/20220701/ourmid/pngtree-web-development-blue-gradient-concept-icon-programming-logo-software-vector-png-image_47412110.jpg">
+                    <div class="Layer">
+                        <h3>WebDevelopment</h3>
+                        <p>I have Completed Front-End WebDevelopment Certification</p>
+                        <p>Click here to view my certificate</p>
+                        <i class='far fa-hand-point-down' style="color: white;font-size: 24px;"></i>
+                        <a href="https://drive.google.com/file/d/1z7jwCIxNkoRfC4wiMGjWME7BH1hJg76b/view"
+                            target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- <a href="#" class="seeMore">SEE MORE</a> -->
+        </div>
+    </div>
+    <!-- closwed my work-->
+    <div id="Contact">
+        <div class="container">
+            <div class="row">
+                <div class="contactLeft">
+                    <h1 class="contactText">Contact Me</h1>
+                    <p><i class="fa fa-envelope"></i>Kishorej117@gmail.com</p>
+                    <p><i class="fa fa-phone-square"></i>+91-9553198690</p>
+                    <div class="SocialIcons">
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://x.com/" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/boyani-jaikishore-4a4b681ba/" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/jaikishore99" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="contactRight">
+                    <form>
+                        <!-- <input type="text" name="Name" placeholder="Your Name" required> -->
+                        <div class="inputBox">
+                            <input type="text" name="Name" required onekeyup="this.setAttribute('value', this.value);"
+                                value="" autocomplete="off">
+                            <label>Your Full Name</label>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="email" required onekeyup="this.setAttribute('value', this.value);"
+                                value="" autocomplete="off">
+                            <label>e-mail address</label>
+                        </div>
+                        <div class="inputBox">
+                            <textarea type="message" name="email" required rows="3" placeholder="Text Area"></textarea>
+                        </div>
+                        <button type="Submit" class="seeMore"><i
+                                class="fas fa-paper-plane"></i>&nbsp;SendYourMessage</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024-2030 &backsim; All Rights reserved by Jaikishore</p>
+        </div>
+    </div>
+
+
+    <script>
+        var tablink = document.getElementsByClassName('AboutLinks');
+        var tabcontents = document.getElementsByClassName('AboutContent');
+        function opentab(tabname) {
+            for (tablinks of tablink) {
+                tablinks.classList.remove('active');
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove('activeTab');
+            }
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabname).classList.add('activeTab');
+        }
+    </script>
+
+    <script>
+        var sidemenu = document.getElementById('sidemenu');
+        function openmunu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+        document.getElementById("resume").onclick = function () {
+            alert("Resume will upload soon")
+        }
+    </script>
+
+</body>
+
+</html>
